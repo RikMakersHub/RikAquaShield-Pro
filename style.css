@@ -276,3 +276,89 @@ footer {
     .nav-links { gap: 12px; }
     .doc-intro h1 { font-size: 1.8rem; }
 }
+
+/* Responsive Structural Circuit Box */
+.circuit-diagram-block {
+    background: #1e2432;
+    padding: 30px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.node-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.vertical-drop {
+    margin: 5px 0;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.split-row {
+    justify-content: space-around;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.bidirectional {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    border-top: 1px dashed #334155;
+    padding-top: 20px;
+}
+
+.circuit-node {
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.solar   { background: #fef3c7; color: #d97706; }
+.battery { background: #dcfce7; color: #15803d; }
+.mcu     { background: #e0f2fe; color: #0369a1; }
+.load    { background: #fee2e2; color: #b91c1c; }
+
+.circuit-arrow {
+    font-family: monospace;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.circuit-col {
+    background: #121824;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #2d3748;
+}
+
+.circuit-col p {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #cbd5e1 !important;
+    margin-bottom: 6px;
+}
+
+.circuit-col p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile override for the layout */
+@media (max-width: 600px) {
+    .bidirectional { grid-template-columns: 1fr; }
+    .split-row { flex-direction: column; gap: 10px; align-items: center; }
+}
