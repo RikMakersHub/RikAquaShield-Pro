@@ -80,24 +80,53 @@
             </section>
 
             <!-- Hardware Schematic & Pinout Section -->
-            <section id="schematic">
-                <h2> SYSTEM SCHEMATIC & WIRING MATRIX</h2>
-                <p class="section-sub">Reference wiring diagram for interconnecting the low-power sensing loop, battery regulation, and alerting hardware.</p>
-                
-                <div class="schematic-container">
-                    <!-- Ensure your schematic filename matches this src attribute -->
-                    <img src="circuit-diagram.png" alt="RikAquaShield-Pro Circuit Schematic" class="schematic-img">
-                    
-                    <div class="schematic-notes">
-                        <h4>💡 Core Wiring Diagnostics:</h4>
-                        <ul>
-                            <li><strong>GND Bus:</strong> Ensure a shared, solid common ground between the Pro Mini, the BC547 emitter, and the 18650 negative terminal.</li>
-                            <li><strong>Hardware Pull-up:</strong> Pin 2 relies on the ATmega328P's internal 20kΩ pull-up resistor. No physical external resistor is required on the probe lines.</li>
-                            <li><strong>Flyback Protection:</strong> If modifying this design to use a mechanical relay instead of a piezo buzzer, place a 1N4007 diode across the relay coil to clip inductive voltage spikes.</li>
-                        </ul>
-                    </div>
+           <!-- Hardware Schematic & Pinout Section -->
+<section id="schematic">
+    <h2> SYSTEM SCHEMATIC & WIRING MATRIX</h2>
+    <p class="section-sub">Hardware routing map for interconnecting the low-power sensing loop, battery regulation, and alerting hardware.</p>
+    
+    <div class="schematic-container">
+        <!-- Interactive Layout Box -->
+        <div class="circuit-diagram-block">
+            <div class="node-row">
+                <div class="circuit-node solar">Solar Panel (5V)</div>
+                <div class="circuit-arrow">──►</div>
+                <div class="circuit-node battery">18650 Battery</div>
+            </div>
+            
+            <div class="node-row vertical-drop">
+                <div class="circuit-line-down">│</div>
+            </div>
+
+            <div class="node-row split-row">
+                <div class="circuit-node mcu">Pro Mini VCC</div>
+                <div class="circuit-node load">Piezo Alert (+)</div>
+            </div>
+
+            <div class="node-row bidirectional">
+                <div class="circuit-col pin-out">
+                    <p>📍 PIN 2 ──► Stainless Probe A</p>
+                    <p>📍 GND  ──► Stainless Probe B</p>
                 </div>
-            </section>
+                <div class="circuit-col gate-out">
+                    <p>📍 PIN 5 ──► [1kΩ] ──► BC547 Base</p>
+                    <p>BC547 Collector ──► Piezo Alert (-)</p>
+                    <p>BC547 Emitter ──► System GND Plane</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="schematic-notes">
+            <h4>💡 Core Wiring Diagnostics:</h4>
+            <ul>
+                <li><strong>GND Bus:</strong> Ensure a shared, solid common ground between the Pro Mini, the BC547 emitter, and the 18650 negative terminal.</li>
+                <li><strong>Hardware Pull-up:</strong> Pin 2 relies on the ATmega328P's internal 20kΩ pull-up resistor. No physical external resistor is required on the probe lines.</li>
+                <li><strong>Flyback Protection:</strong> If modifying this design to use a mechanical relay instead of a piezo buzzer, place a 1N4007 diode across the relay coil to clip inductive voltage spikes.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 
             <!-- Wide High-Contrast Firmware Container -->
             <section id="code">
