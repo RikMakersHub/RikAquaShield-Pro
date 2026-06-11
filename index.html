@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaShield Node | RikMakersHub</title>
+    <!-- External Stylesheet Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <!-- Header -->
+        <header>
+            <div class="brand-logo">RikMakersHub<span>.</span></div>
+            <a href="https://hackster.io" target="_blank" class="btn-external">Hackster Hub</a>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <span class="badge">Project 03: Resource Guard</span>
+                <h1>AquaShield Node</h1>
+                <p>An ultra-low-cost, battery-optimized tank overflow and dry-run protector built for extreme field endurance.</p>
+            </section>
+
+            <!-- Architectural Advantages -->
+            <section id="advantages">
+                <h2>Architecture & Logic</h2>
+                <div class="grid-layout">
+                    <div class="card metric-card">
+                        <h3>Sub-20µA Active Floor</h3>
+                        <p>Stripped down onboard power LEDs and linear regulator circuits to ensure passive power draw remains at a microscopic level.</p>
+                    </div>
+                    <div class="card metric-card">
+                        <h3>Upcycled Li-Ion Loop</h3>
+                        <p>Powered via a single salvaged 18650 cell paired with a tiny, weatherproof epoxy solar casing for multi-year off-grid runtimes.</p>
+                    </div>
+                    <div class="card metric-card">
+                        <h3>Tactile Probe Arrays</h3>
+                        <p>Replaces problematic ultrasonic frameworks with standard marine-grade stainless contacts to bypass fluid humidity corruption.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bill of Materials (BOM) -->
+            <section id="bom">
+                <h2>Bill of Materials (BOM)</h2>
+                <div class="grid-layout">
+                    <div class="card metric-card">
+                        <h3>Arduino Pro Mini (3.3V)</h3>
+                        <p>The standard processing core chosen for its easily modified trace lines and deep sleep capability.</p>
+                        <span class="price-tag">₹180 / $2.20</span>
+                    </div>
+                    <div class="card metric-card">
+                        <h3>Salvaged 18650 + Solar</h3>
+                        <p>Reused power source and low-wattage charge cell for continuous day/night autonomous execution.</p>
+                        <span class="price-tag">₹70 / $0.85</span>
+                    </div>
+                    <div class="card metric-card">
+                        <h3>Switching Peripherals</h3>
+                        <p>BC547 transistor matrix, piezoceramic tone transducer, and a localized acoustic junction shell.</p>
+                        <span class="price-tag">₹60 / $0.75</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Embedded Code Area -->
+            <section id="code">
+                <h2>Production Firmware</h2>
+                <p>Deploy this lean loop directly to your micro-architecture via the native Arduino IDE platform.</p>
+                
+                <div class="code-box">
+                    <div class="code-bar">
+                        <span>aquashield_sleep.ino</span>
+                        <button class="btn-copy" onclick="executeCopy()">Copy Loop</button>
+                    </div>
+<pre><code id="firmware-payload">// AquaShield Node - Core Watchdog Sleep Routine
+#include &lt;LowPower.h&gt;
+
+const int PIN_PROBE = 2;   // Structural liquid trace
+const int PIN_OUTPUT = 5;  // Gate switcher array
+
+void setup() {
+  pinMode(PIN_PROBE, INPUT_PULLUP);
+  pinMode(PIN_OUTPUT, OUTPUT);
+  digitalWrite(PIN_OUTPUT, LOW);
+}
+
+void loop() {
+  // Check if fluid has bridged the sensor path (Active LOW)
+  if (digitalRead(PIN_PROBE) == LOW) {
+    digitalWrite(PIN_OUTPUT, HIGH);
+    delay(250);
+    digitalWrite(PIN_OUTPUT, LOW);
+    delay(250);
+  } else {
+    // Drop execution completely into deep sleep for 8-second cycles
+    LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
+  }
+}</code></pre>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 RikMakersHub. Systems engineered for direct global utility.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Script Implementation -->
+    <script>
+        function executeCopy() {
+            const rawText = document.getElementById('firmware-payload').innerText;
+            navigator.clipboard.writeText(rawText).then(() => {
+                const triggerBtn = document.querySelector('.btn-copy');
+                triggerBtn.innerText = 'Copied!';
+                triggerBtn.style.borderColor = 'var(--accent-green)';
+                triggerBtn.style.color = 'var(--accent-green)';
+                
+                setTimeout(() => {
+                    triggerBtn.innerText = 'Copy Loop';
+                    triggerBtn.style.borderColor = 'var(--border-color)';
+                    triggerBtn.style.color = 'var(--text-primary)';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
