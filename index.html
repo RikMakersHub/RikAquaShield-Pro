@@ -3,43 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaShield Node | RikMakersHub</title>
+    <title>RikAquaShield-Pro | RikMakersHub</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <!-- External Stylesheet Link -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Global Top Alert Banner -->
+    <div class="top-banner">
+        <span>🔧 Production Node Build Status: Stable v1.0.4 | 100% Open Source & Free Deployment Architecture</span>
+    </div>
 
     <div class="wrapper">
         
         <!-- Header -->
         <header>
-            <div class="brand-logo">RikMakersHub<span>.</span></div>
-            <a href="https://hackster.io" target="_blank" class="btn-external">Hackster Hub</a>
+            <div class="brand-logo">RikMakersHub / <span>RikAquaShield-Pro</span></div>
+            <div class="nav-links">
+                <a href="#advantages" class="nav-item">Logic</a>
+                <a href="#bom" class="nav-item">BOM Specs</a>
+                <a href="#schematic" class="nav-item">Schematic</a>
+                <a href="#code" class="nav-item">Firmware</a>
+                <a href="https://hackster.io" target="_blank" class="btn-external">Hackster Hub</a>
+            </div>
         </header>
 
-        <!-- Main Content -->
+        <!-- Main Workspace -->
         <main>
-            <!-- Hero Section -->
-            <section class="hero">
-                <span class="badge">Project 03: Resource Guard</span>
+            
+            <!-- Context Header Section -->
+            <section class="doc-intro">
+                <span class="system-tag">Project 03 // Resource Conservation Node</span>
                 <h1>AquaShield Node</h1>
                 <p>An ultra-low-cost, battery-optimized tank overflow and dry-run protector built for extreme field endurance.</p>
             </section>
 
             <!-- Architectural Advantages -->
             <section id="advantages">
-                <h2>Architecture & Logic</h2>
-                <div class="grid-layout">
-                    <div class="card metric-card">
+                <h2> ARCHITECTURE & LOGIC</h2>
+                <div class="info-block">
+                    <div class="info-item">
                         <h3>Sub-20µA Active Floor</h3>
                         <p>Stripped down onboard power LEDs and linear regulator circuits to ensure passive power draw remains at a microscopic level.</p>
                     </div>
-                    <div class="card metric-card">
+                    <div class="info-item">
                         <h3>Upcycled Li-Ion Loop</h3>
                         <p>Powered via a single salvaged 18650 cell paired with a tiny, weatherproof epoxy solar casing for multi-year off-grid runtimes.</p>
                     </div>
-                    <div class="card metric-card">
+                    <div class="info-item">
                         <h3>Tactile Probe Arrays</h3>
                         <p>Replaces problematic ultrasonic frameworks with standard marine-grade stainless contacts to bypass fluid humidity corruption.</p>
                     </div>
@@ -48,19 +59,19 @@
 
             <!-- Bill of Materials (BOM) -->
             <section id="bom">
-                <h2>Bill of Materials (BOM)</h2>
-                <div class="grid-layout">
-                    <div class="card metric-card">
+                <h2> BILL OF MATERIALS (BOM)</h2>
+                <div class="info-block">
+                    <div class="info-item">
                         <h3>Arduino Pro Mini (3.3V)</h3>
                         <p>The standard processing core chosen for its easily modified trace lines and deep sleep capability.</p>
                         <span class="price-tag">₹180 / $2.20</span>
                     </div>
-                    <div class="card metric-card">
+                    <div class="info-item">
                         <h3>Salvaged 18650 + Solar</h3>
                         <p>Reused power source and low-wattage charge cell for continuous day/night autonomous execution.</p>
                         <span class="price-tag">₹70 / $0.85</span>
                     </div>
-                    <div class="card metric-card">
+                    <div class="info-item">
                         <h3>Switching Peripherals</h3>
                         <p>BC547 transistor matrix, piezoceramic tone transducer, and a localized acoustic junction shell.</p>
                         <span class="price-tag">₹60 / $0.75</span>
@@ -68,10 +79,30 @@
                 </div>
             </section>
 
-            <!-- Embedded Code Area -->
+            <!-- Hardware Schematic & Pinout Section -->
+            <section id="schematic">
+                <h2> SYSTEM SCHEMATIC & WIRING MATRIX</h2>
+                <p class="section-sub">Reference wiring diagram for interconnecting the low-power sensing loop, battery regulation, and alerting hardware.</p>
+                
+                <div class="schematic-container">
+                    <!-- Ensure your schematic filename matches this src attribute -->
+                    <img src="circuit-diagram.png" alt="RikAquaShield-Pro Circuit Schematic" class="schematic-img">
+                    
+                    <div class="schematic-notes">
+                        <h4>💡 Core Wiring Diagnostics:</h4>
+                        <ul>
+                            <li><strong>GND Bus:</strong> Ensure a shared, solid common ground between the Pro Mini, the BC547 emitter, and the 18650 negative terminal.</li>
+                            <li><strong>Hardware Pull-up:</strong> Pin 2 relies on the ATmega328P's internal 20kΩ pull-up resistor. No physical external resistor is required on the probe lines.</li>
+                            <li><strong>Flyback Protection:</strong> If modifying this design to use a mechanical relay instead of a piezo buzzer, place a 1N4007 diode across the relay coil to clip inductive voltage spikes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wide High-Contrast Firmware Container -->
             <section id="code">
-                <h2>Production Firmware</h2>
-                <p>Deploy this lean loop directly to your micro-architecture via the native Arduino IDE platform.</p>
+                <h2> PRODUCTION FIRMWARE</h2>
+                <p class="section-sub">Deploy this lean loop directly to your micro-architecture via the native Arduino IDE platform. Standby consumption rests at &lt;20µA.</p>
                 
                 <div class="code-box">
                     <div class="code-bar">
@@ -126,7 +157,7 @@ void loop() {
                 setTimeout(() => {
                     triggerBtn.innerText = 'Copy Loop';
                     triggerBtn.style.borderColor = 'var(--border-color)';
-                    triggerBtn.style.color = 'var(--text-primary)';
+                    triggerBtn.style.color = '#94a3b8';
                 }, 2000);
             });
         }
