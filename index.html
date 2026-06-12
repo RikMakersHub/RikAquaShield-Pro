@@ -59,26 +59,61 @@
             </section>
 
             <!-- Bill of Materials (BOM) -->
-            <section id="bom">
-                <h2> BILL OF MATERIALS (BOM)</h2>
-                <div class="info-block">
-                    <div class="info-item">
-                        <h3>Arduino Pro Mini (3.3V)</h3>
-                        <p>The standard processing core chosen for its easily modified trace lines and deep sleep capability.</p>
-                        <span class="price-tag">₹180 / $2.20</span>
-                    </div>
-                    <div class="info-item">
-                        <h3>Salvaged 18650 + Solar</h3>
-                        <p>Reused power source and low-wattage charge cell for continuous day/night autonomous execution.</p>
-                        <span class="price-tag">₹70 / $0.85</span>
-                    </div>
-                    <div class="info-item">
-                        <h3>Switching Peripherals</h3>
-                        <p>BC547 transistor matrix, piezoceramic tone transducer, and a localized acoustic junction shell.</p>
-                        <span class="price-tag">₹60 / $0.75</span>
-                    </div>
-                </div>
-            </section>
+            <!-- Bill of Materials (BOM) Section -->
+<section id="bom">
+    <h2> BILL OF MATERIALS (BOM) • COST ANALYSIS</h2>
+    <p class="section-sub">Value-engineered hardware matrix targeting an active field deployment cost under ₹350 ($4.25 USD).</p>
+    
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Component Name</th>
+                    <th>Specification / Type</th>
+                    <th>Cost (INR)</th>
+                    <th>Primary Operational Function</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="bold-cell">Microcontroller Unit</td>
+                    <td>Arduino Pro Mini (3.3V / 8MHz ATmega328P)</td>
+                    <td>₹180</td>
+                    <td>Core logic execution loop. Onboard trace cuts isolate and remove the power indicator LED.</td>
+                </tr>
+                <tr>
+                    <td class="bold-cell">Energy Reservoir</td>
+                    <td>Upcycled 18650 Li-Ion Cell + 5V Mini Epoxy Solar Panel</td>
+                    <td>₹70</td>
+                    <td>Autonomous, off-grid power management loop. Completely bypasses household grid lines.</td>
+                </tr>
+                <tr>
+                    <td class="bold-cell">Sensing Infrastructure</td>
+                    <td>Marine-Grade Stainless Steel Screws (x2)</td>
+                    <td>₹15</td>
+                    <td>Replaces fragile ultrasonic modules. Uses liquid continuity to pull GPIO Pin 2 to a LOW state.</td>
+                </tr>
+                <tr>
+                    <td class="bold-cell">Switching & Alerts</td>
+                    <td>BC547 NPN Transistor + 1kΩ Resistor + 5V Piezo Buzzer</td>
+                    <td>₹45</td>
+                    <td>Isolates processing pin from direct load demands. Drives high-frequency acoustic pulsing alerts.</td>
+                </tr>
+                <tr>
+                    <td class="bold-cell">System Shielding</td>
+                    <td>IP65 Weatherproof Electrical PVC Junction Box</td>
+                    <td>₹40</td>
+                    <td>Protects core processing traces from intense monsoon downpours and thermal field degradation.</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2">Total Value-Engineered Build Cost</td>
+                    <td colspan="2">₹350 / $4.25 USD</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 
             <!-- Hardware Schematic & Pinout Section -->
            <!-- Hardware Schematic & Pinout Section -->
