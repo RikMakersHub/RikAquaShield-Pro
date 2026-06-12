@@ -3,180 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="9F0gZz8HEU6D2ESiS9WenJSxapmGgNYrPSFIen1y778" />
-    <title>RikAquaShield-Pro | RikMakersHub</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>RikAquaShield-Pro • High-Density Hardware Analytics Node</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Global Top Alert Banner -->
+    <!-- Global Top Alert Notification Banner -->
     <div class="top-banner">
-        <span>🔧 Production Node Build Status: Stable v1.0.4 | 100% Open Source & Free Deployment Architecture</span>
+        ⚠️ ECO-SYSTEM NOTIFICATION: PRODUCTION LOG UPGRADED TO NON-BLOCKING STATE VIA RIKECOCODE-PRO MATRIX
     </div>
 
     <div class="wrapper">
-        
-        <!-- Header -->
+        <!-- Header Navigation Bar Matrix -->
         <header>
-            <div class="brand-logo">RikMakersHub / <span>RikAquaShield-Pro</span></div>
-            <div class="nav-links">
-                <a href="https://rikmakershub.github.io/RikAgriculture-Pro/sentinel.html" target="_blank" class="btn-external">Pulse Sentinel</a>
-                <a href="https://rikmakershub.github.io/RikHydroTech-Pro/" target="_blank" class="btn-external">RikHydroTech-Pro</a>
-                <a href="https://www.hackster.io/RikMakersHub/rikaquashield-pro-sub-20-a-solar-water-automation-node-d82095" target="_blank" class="btn-external">Hackster Hub</a>
-            </div>
+            <div class="brand-logo">Rik<span>AquaShield</span>-Pro</div>
+            <nav class="nav-links">
+                <a href="#schematic" class="nav-item">Schematic Map</a>
+                <a href="#bom" class="nav-item">BOM Specs</a>
+                <a href="#firmware" class="nav-item">Core Code</a>
+                <a href="https://github.io" class="btn-external">Central Matrix Hub 🚀</a>
+            </nav>
         </header>
 
-        <!-- Main Workspace -->
-        <main>
+        <!-- Technical Documentation Context Headers -->
+        <section class="doc-intro">
+            <span class="system-tag">SYSTEM ID: SYS-019 • PRODUCTION STATUS LIVE</span>
+            <h1>RikAquaShield-Pro: Value-Engineered Solar Fluid Monitor</h1>
+            <p>An ultra-low-cost, battery-optimized tank overflow and dry-run protector built for extreme environmental field endurance. Built entirely on an open-source framework by RikMakersHub.</p>
+        </section>
+
+        <!-- Structural Schematic & Wiring Matrix Section -->
+        <section id="schematic">
+            <h2>SYSTEM SCHEMATIC & WIRING MATRIX</h2>
+            <p class="section-sub">Hardware routing map for interconnecting the low-power sensing loop, battery regulation, and alerting hardware.</p>
             
-            <!-- Context Header Section -->
-            <section class="doc-intro">
-                <span class="system-tag">Project 03 // Resource Conservation Node</span>
-                <h1>AquaShield Node</h1>
-                <p>An ultra-low-cost, battery-optimized tank overflow and dry-run protector built for extreme field endurance.</p>
-            </section>
+            <div class="schematic-container">
+                <div class="circuit-diagram-block">
+                    <div class="node-row">
+                        <div class="circuit-node solar">Solar Panel (5V)</div>
+                        <div class="circuit-arrow">➔</div>
+                        <div class="circuit-node battery">18650 Battery</div>
+                    </div>
+                    
+                    <div class="node-row vertical-drop">
+                        <div class="circuit-line-down">│</div>
+                    </div>
 
-            <!-- Architectural Advantages -->
-            <section id="advantages">
-                <h2> ARCHITECTURE & LOGIC</h2>
-                <div class="info-block">
-                    <div class="info-item">
-                        <h3>Sub-20µA Active Floor</h3>
-                        <p>Stripped down onboard power LEDs and linear regulator circuits to ensure passive power draw remains at a microscopic level.</p>
+                    <div class="node-row split-row">
+                        <div class="circuit-node mcu">Pro Mini VCC</div>
+                        <div class="circuit-node load">Piezo Alert (+)</div>
                     </div>
-                    <div class="info-item">
-                        <h3>Upcycled Li-Ion Loop</h3>
-                        <p>Powered via a single salvaged 18650 cell paired with a tiny, weatherproof epoxy solar casing for multi-year off-grid runtimes.</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Tactile Probe Arrays</h3>
-                        <p>Replaces problematic ultrasonic frameworks with standard marine-grade stainless contacts to bypass fluid humidity corruption.</p>
+
+                    <div class="node-row bidirectional">
+                        <div class="circuit-col">
+                            <p>📍 PIN 2 ➔ Stainless Probe A</p>
+                            <p>📍 GND  ➔ Stainless Probe B</p>
+                        </div>
+                        <div class="circuit-col">
+                            <p>📍 PIN 5 ➔ [1kΩ] ➔ BC547 Base</p>
+                            <p>BC547 Collector ➔ Piezo Alert (-)</p>
+                            <p>BC547 Emitter ➔ System GND Plane</p>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Bill of Materials (BOM) -->
-            <!-- Bill of Materials (BOM) Section -->
-<section id="bom">
-    <h2> BILL OF MATERIALS (BOM) • COST ANALYSIS</h2>
-    <p class="section-sub">Value-engineered hardware matrix targeting an active field deployment cost under ₹500 ($5.80 USD).</p>
-    
-    <div class="table-container">
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Component Name</th>
-                    <th>Specification / Type</th>
-                    <th>Cost (Under ₹500)</th>
-                    <th>Primary Operational Function</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="bold-cell">Microcontroller Unit</td>
-                    <td>Arduino Pro Mini (3.3V / 8MHz ATmega328P)</td>
-                    <td>₹180</td>
-                    <td>Core logic execution loop. Onboard trace cuts isolate and remove the power indicator LED.</td>
-                </tr>
-                <tr>
-                    <td class="bold-cell">Energy Reservoir</td>
-                    <td>Upcycled 18650 Li-Ion Cell + 5V Mini Epoxy Solar Panel</td>
-                    <td>₹70</td>
-                    <td>Autonomous, off-grid power management loop. Completely bypasses household grid lines.</td>
-                </tr>
-                <tr>
-                    <td class="bold-cell">Sensing Infrastructure</td>
-                    <td>Marine-Grade Stainless Steel Screws (x2)</td>
-                    <td>₹15</td>
-                    <td>Replaces fragile ultrasonic modules. Uses liquid continuity to pull GPIO Pin 2 to a LOW state.</td>
-                </tr>
-                <tr>
-                    <td class="bold-cell">Switching & Alerts</td>
-                    <td>BC547 NPN Transistor + 1kΩ Resistor + 5V Piezo Buzzer</td>
-                    <td>₹45</td>
-                    <td>Isolates processing pin from direct load demands. Drives high-frequency acoustic pulsing alerts.</td>
-                </tr>
-                <tr>
-                    <td class="bold-cell">System Shielding</td>
-                    <td>IP65 Weatherproof Electrical PVC Junction Box</td>
-                    <td>₹40</td>
-                    <td>Protects core processing traces from intense monsoon downpours and thermal field degradation.</td>
-                </tr>
-                <tr class="total-row">
-                    <td colspan="2">Total Value-Engineered Build Cost</td>
-                    <td colspan="2">₹350 / $4.25 USD   (<b>SUCCESS</b>) </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-
-            <!-- Hardware Schematic & Pinout Section -->
-           <!-- Hardware Schematic & Pinout Section -->
-<section id="schematic">
-    <h2> SYSTEM SCHEMATIC & WIRING MATRIX</h2>
-    <p class="section-sub">Hardware routing map for interconnecting the low-power sensing loop, battery regulation, and alerting hardware.</p>
-    
-    <div class="schematic-container">
-        <!-- Interactive Layout Box -->
-        <div class="circuit-diagram-block">
-            <div class="node-row">
-                <div class="circuit-node solar">Solar Panel (5V)</div>
-                <div class="circuit-arrow">──►</div>
-                <div class="circuit-node battery">18650 Battery</div>
-            </div>
-            
-            <div class="node-row vertical-drop">
-                <div class="circuit-line-down">│</div>
-            </div>
-
-            <div class="node-row split-row">
-                <div class="circuit-node mcu">Pro Mini VCC</div>
-                <div class="circuit-node load">Piezo Alert (+)</div>
-            </div>
-
-            <div class="node-row bidirectional">
-                <div class="circuit-col pin-out">
-                    <p>📍 PIN 2 ──► Stainless Probe A</p>
-                    <p>📍 GND  ──► Stainless Probe B</p>
-                </div>
-                <div class="circuit-col gate-out">
-                    <p>📍 PIN 5 ──► [1kΩ] ──► BC547 Base</p>
-                    <p>BC547 Collector ──► Piezo Alert (-)</p>
-                    <p>BC547 Emitter ──► System GND Plane</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="schematic-notes">
-            <h4>💡 Core Wiring Diagnostics:</h4>
-            <ul>
-                <li><strong>GND Bus:</strong> Ensure a shared, solid common ground between the Pro Mini, the BC547 emitter, and the 18650 negative terminal.</li>
-                <li><strong>Hardware Pull-up:</strong> Pin 2 relies on the ATmega328P's internal 20kΩ pull-up resistor. No physical external resistor is required on the probe lines.</li>
-                <li><strong>Flyback Protection:</strong> If modifying this design to use a mechanical relay instead of a piezo buzzer, place a 1N4007 diode across the relay coil to clip inductive voltage spikes.</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
-            <!-- Wide High-Contrast Firmware Container -->
-            <section id="code">
-                <h2> PRODUCTION FIRMWARE</h2>
-                <p class="section-sub">Deploy this lean loop directly to your micro-architecture via the native Arduino IDE platform. Standby consumption rests at &lt;20µA.</p>
                 
-                <div class="code-box">
-                    <div class="code-bar">
-                        <span>aquashield_sleep.ino</span>
-                        <button class="btn-copy" onclick="executeCopy()">Copy Loop</button>
-                    </div>
-<pre><code id="firmware-payload">// AquaShield Node - Core Watchdog Sleep Routine
-#include &lt;LowPower.h&gt;
+                <div class="schematic-notes">
+                    <h4>💡 Core Wiring Diagnostics:</h4>
+                    <ul>
+                        <li><strong>GND Bus:</strong> Ensure a shared, solid common ground between the Pro Mini, the BC547 emitter, and the 18650 negative terminal.</li>
+                        <li><strong>Hardware Pull-up:</strong> Pin 2 relies on the ATmega328P's internal 20kΩ pull-up resistor. No physical external resistor is required on the probe lines.</li>
+                        <li><strong>Flyback Protection:</strong> If modifying this design to use a mechanical relay instead of a piezo buzzer, place a 1N4007 diode across the relay coil to clip inductive voltage spikes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bill of Materials (BOM) & Cost Analysis Section -->
+        <section id="bom">
+            <h2>BILL OF MATERIALS (BOM) • COST ANALYSIS</h2>
+            <p class="section-sub">Value-engineered hardware matrix targeting an active field deployment cost under ₹350 ($4.25 USD).</p>
+            
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Component Name</th>
+                            <th>Specification / Type</th>
+                            <th>Cost (INR)</th>
+                            <th>Primary Operational Function</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold-cell">Microcontroller Unit</td>
+                            <td>Arduino Pro Mini (3.3V / 8MHz ATmega328P)</td>
+                            <td>₹180</td>
+                            <td>Core logic execution loop. Onboard trace cuts isolate and remove the power indicator LED.</td>
+                        </tr>
+                        <tr>
+                            <td class="bold-cell">Energy Reservoir</td>
+                            <td>Upcycled 18650 Li-Ion Cell + 5V Mini Epoxy Solar Panel</td>
+                            <td>₹70</td>
+                            <td>Autonomous, off-grid power management loop. Completely bypasses household grid lines.</td>
+                        </tr>
+                        <tr>
+                            <td class="bold-cell">Sensing Infrastructure</td>
+                            <td>Marine-Grade Stainless Steel Screws (x2)</td>
+                            <td>₹15</td>
+                            <td>Replaces fragile ultrasonic modules. Uses liquid continuity to pull GPIO Pin 2 to a LOW state.</td>
+                        </tr>
+                        <tr>
+                            <td class="bold-cell">Switching & Alerts</td>
+                            <td>BC547 NPN Transistor + 1kΩ Resistor + 5V Piezo Buzzer</td>
+                            <td>₹45</td>
+                            <td>Isolates processing pin from direct load demands. Drives high-frequency acoustic pulsing alerts.</td>
+                        </tr>
+                        <tr>
+                            <td class="bold-cell">System Shielding</td>
+                            <td>IP65 Weatherproof Electrical PVC Junction Box</td>
+                            <td>₹40</td>
+                            <td>Protects core processing traces from intense monsoon downpours and thermal field degradation.</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2">Total Value-Engineered Build Cost</td>
+                            <td colspan="2">₹350 / $4.25 USD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Optimized Non-Blocking Code Section -->
+        <section id="firmware">
+            <h2>CORE FIRMWARE SOURCE REFACTOR</h2>
+            <p class="section-sub">Watchdog-gated production script optimized via <strong>RikEcoCode-Pro</strong> computational analytics to remove blocking delay() lines.</p>
+            
+            <div class="code-box">
+                <div class="code-bar">
+                    <span>aquashield_optimized.ino</span>
+                    <button class="btn-copy" onclick="navigator.clipboard.writeText(document.getElementById('codeBlock').innerText); this.innerText='Copied!'; setTimeout(() => this.innerText='Copy Code', 1500);">Copy Code</button>
+                </div>
+                <pre id="codeBlock">#include &lt;LowPower.h&gt;
 
 const int PIN_PROBE = 2;   // Structural liquid trace
 const int PIN_OUTPUT = 5;  // Gate switcher array
+
+unsigned long previousTimeMarker = 0;
+const long structuralInterval = 250; // Dynamic non-blocking baseline
+int currentAlertState = LOW;         // Tracks the buzzer toggle position
 
 void setup() {
   pinMode(PIN_PROBE, INPUT_PULLUP);
@@ -187,25 +161,41 @@ void setup() {
 void loop() {
   // Check if fluid has bridged the sensor path (Active LOW)
   if (digitalRead(PIN_PROBE) == LOW) {
-    digitalWrite(PIN_OUTPUT, HIGH);
-    delay(250);
-    digitalWrite(PIN_OUTPUT, LOW);
-    delay(250);
+    unsigned long currentTimeMarker = millis(); // Background tracking stopwatch
+
+    // Asynchronous non-blocking task condition block instead of hard delay()
+    if (currentTimeMarker - previousTimeMarker >= structuralInterval) {
+      previousTimeMarker = currentTimeMarker; // Balance baseline reference point
+      
+      // Toggle output state between HIGH and LOW every 250ms natively
+      if (currentAlertState == LOW) {
+        currentAlertState = HIGH;
+      } else {
+        currentAlertState = LOW;
+      }
+      digitalWrite(PIN_OUTPUT, currentAlertState);
+    }
   } else {
-    // Drop execution completely into deep sleep for 8-second cycles
+    // Force direct shutdown of alarm line before sleeping
+    digitalWrite(PIN_OUTPUT, LOW);
+    currentAlertState = LOW;
+    
+    // Drop execution completely into deep sleep for 8-second cycles to hit sub-20µA
     LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
   }
-}</code></pre>
-                </div>
-            </section>
-        </main>
+}</pre>
+            </div>
+        </section>
 
-        <!-- Footer -->
+        <!-- Footer Systems Log Information Area -->
         <footer>
-            <p>© 2026 RikMakersHub. Systems engineered for direct global utility.</p>
+            © 2026 RikMakersHub Pro Architecture Systems. All Rights Reserved. • Powered by Static Optimization Pipeline.
         </footer>
-
     </div>
+
+</body>
+</html>
+
 
     <!-- JavaScript Script Implementation -->
     <script>
