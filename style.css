@@ -1,16 +1,21 @@
-/* Document Layout Style Variables */
+/* ==========================================================================
+   RikMakersHub Global Style System - RikAquaShield-Pro
+   ========================================================================== */
+
+/* Layout Architecture Variables */
 :root {
-    --bg-main: #fdfaf2;         /* Off-white crisp paper canvas */
-    --bg-surface: #ffffff;      /* Pure white blocks */
-    --bg-dark: #121824;         /* High-contrast slate for dark blocks */
-    --text-primary: #1e2432;    /* Deep charcoals */
-    --text-secondary: #576073;  /* Subdued descriptors */
-    --accent-red: #b91c1c;      /* Document heading accents */
-    --accent-green: #16a34a;    /* Success state accents */
-    --border-color: #e2e8f0;    /* Clean horizontal data grids */
+    --bg-main: #fdfaf2;         /* Crisp off-white engineering canvas */
+    --bg-surface: #ffffff;      /* Pure white block backgrounds */
+    --bg-dark: #121824;         /* High-contrast charcoal slate for code */
+    --text-primary: #1e2432;    /* Deep technical text */
+    --text-secondary: #576073;  /* Subdued diagnostics & comments */
+    --accent-red: #b91c1c;      /* Structural heading accents */
+    --accent-blue: #0284c7;     /* Secondary active links */
+    --accent-green: #16a34a;    /* Success state triggers */
+    --border-color: #e2e8f0;    /* High-density grid dividers */
 }
 
-/* Base Engine Rules */
+/* Base Reset Rules */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,24 +29,25 @@ body {
     line-height: 1.6;
 }
 
-/* Alert Strip Banner */
+/* Global Top Alert Notification Banner */
 .top-banner {
     background: #fef2f2;
     border-bottom: 1px solid #fee2e2;
     color: var(--accent-red);
-    padding: 8px 20px;
+    padding: 10px 20px;
     font-size: 0.85rem;
     font-weight: 600;
     text-align: center;
 }
 
+/* Master Grid Wrapper */
 .wrapper {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header Navigation */
+/* Header & Sub-Navigation Grid */
 header {
     display: flex;
     justify-content: space-between;
@@ -72,6 +78,7 @@ header {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
+    transition: color 0.15s ease;
 }
 
 .nav-item:hover {
@@ -86,9 +93,14 @@ header {
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
+    transition: opacity 0.15s ease;
 }
 
-/* Documentation Content Header Blocks */
+.btn-external:hover {
+    opacity: 0.9;
+}
+
+/* Technical Documentation Context Headers */
 .doc-intro {
     padding: 50px 0 30px 0;
 }
@@ -136,7 +148,7 @@ section h2 {
     margin-bottom: 15px;
 }
 
-/* Content Text Blocks */
+/* Info Architecture Grid blocks (Advantages) */
 .info-block {
     margin-bottom: 10px;
 }
@@ -165,7 +177,54 @@ section h2 {
     color: var(--text-primary);
 }
 
-/* Hardware Schematic Layout Blocks */
+/* High-Density Value-Engineering Data Table */
+.table-container {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.data-table th {
+    background: #f8fafc;
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.data-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.data-table .bold-cell {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.total-row {
+    background: #fdf8f6;
+    font-weight: 700;
+}
+
+.total-row td {
+    color: var(--accent-red);
+    font-size: 1.05rem;
+    border-bottom: none;
+}
+
+/* Responsive Structural Schematic Box */
 .schematic-container {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
@@ -174,14 +233,91 @@ section h2 {
     margin-top: 15px;
 }
 
-.schematic-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 20px auto;
+.circuit-diagram-block {
+    background: #1e2432;
+    padding: 30px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.node-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.vertical-drop {
+    margin: 5px 0;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.circuit-line-down {
+    font-family: monospace;
+}
+
+.split-row {
+    justify-content: space-around;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.bidirectional {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    border-top: 1px dashed #334155;
+    padding-top: 20px;
+}
+
+.circuit-node {
+    padding: 10px 18px;
     border-radius: 4px;
-    border: 1px solid var(--border-color);
-    background: #ffffff;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.solar   { background: #fef3c7; color: #d97706; }
+.battery { background: #dcfce7; color: #15803d; }
+.mcu     { background: #e0f2fe; color: #0369a1; }
+.load    { background: #fee2e2; color: #b91c1c; }
+
+.circuit-arrow {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circuit-col {
+    background: #121824;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #2d3748;
+    text-align: left;
+    min-width: 260px;
+}
+
+.circuit-col p {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #cbd5e1 !important;
+    margin-bottom: 6px;
+}
+
+.circuit-col p:last-child {
+    margin-bottom: 0;
 }
 
 .schematic-notes {
@@ -212,7 +348,7 @@ section h2 {
     color: var(--text-primary);
 }
 
-/* Monospace Code Shell Box Components */
+/* Monospace Code Shell Box Modules */
 .code-box {
     background: var(--bg-dark);
     border-radius: 6px;
@@ -260,7 +396,7 @@ pre {
     font-size: 0.9rem;
 }
 
-/* Footer Element Area */
+/* Document Footer Element Area */
 footer {
     text-align: center;
     padding: 40px 0;
@@ -270,95 +406,26 @@ footer {
     margin-top: 20px;
 }
 
-/* Mobile Responsiveness Rules */
-@media (max-width: 600px) {
+/* Mobile Responsiveness Adaptive Rules */
+@media (max-width: 768px) {
     header { flex-direction: column; gap: 15px; text-align: center; }
     .nav-links { gap: 12px; }
     .doc-intro h1 { font-size: 1.8rem; }
-}
-
-/* Responsive Structural Circuit Box */
-.circuit-diagram-block {
-    background: #1e2432;
-    padding: 30px;
-    border-radius: 6px;
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.node-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-}
-
-.vertical-drop {
-    margin: 5px 0;
-    color: #94a3b8;
-    font-weight: bold;
-}
-
-.split-row {
-    justify-content: space-around;
-    max-width: 600px;
-    margin-bottom: 20px;
-}
-
-.bidirectional {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 100%;
-    max-width: 800px;
-    border-top: 1px dashed #334155;
-    padding-top: 20px;
-}
-
-.circuit-node {
-    padding: 10px 18px;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.solar   { background: #fef3c7; color: #d97706; }
-.battery { background: #dcfce7; color: #15803d; }
-.mcu     { background: #e0f2fe; color: #0369a1; }
-.load    { background: #fee2e2; color: #b91c1c; }
-
-.circuit-arrow {
-    font-family: monospace;
-    color: #94a3b8;
-    font-weight: bold;
-}
-
-.circuit-col {
-    background: #121824;
-    padding: 15px;
-    border-radius: 4px;
-    border: 1px solid #2d3748;
-}
-
-.circuit-col p {
-    font-family: monospace;
-    font-size: 0.85rem;
-    color: #cbd5e1 !important;
-    margin-bottom: 6px;
-}
-
-.circuit-col p:last-child {
-    margin-bottom: 0;
-}
-
-/* Mobile override for the layout */
-@media (max-width: 600px) {
+    
+    /* Responsive Table Conversion */
+    .data-table, .data-table tbody, .data-table tr, .data-table td, .data-table th { 
+        display: block; 
+        width: 100%; 
+    }
+    .data-table th { 
+        display: none; 
+    }
+    .data-table td { 
+        border-bottom: 1px solid var(--border-color); 
+        padding: 12px 15px; 
+    }
+    
+    /* Responsive Circuit Matrix System */
     .bidirectional { grid-template-columns: 1fr; }
     .split-row { flex-direction: column; gap: 10px; align-items: center; }
 }
