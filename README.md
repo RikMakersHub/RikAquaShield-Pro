@@ -24,3 +24,5 @@
 ---
 ## 💻 Open Source EULA
 Engineered by **RikMakersHub**. Licensed completely free for public customization, localized optimization, and global resource conservation.
+
+**Come Check It Out In:** [RikAquaShield-Pro]()
